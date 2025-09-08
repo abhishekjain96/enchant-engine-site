@@ -19,6 +19,11 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        
+        // Neon Colors
+        "neon-cyan": "hsl(var(--neon-cyan))",
+        "neon-magenta": "hsl(var(--neon-magenta))",
+        "neon-gold": "hsl(var(--neon-gold))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -80,10 +85,29 @@ export default {
             height: "0",
           },
         },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+        "glow": {
+          "0%, 100%": { boxShadow: "0 0 20px hsl(var(--neon-cyan) / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(var(--neon-cyan) / 0.6)" },
+        },
+        "pulse-neon": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.7" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "float": "float 6s ease-in-out infinite",
+        "glow": "glow 2s ease-in-out infinite",
+        "pulse-neon": "pulse-neon 2s ease-in-out infinite",
+      },
+      backgroundImage: {
+        "gradient-neon": "linear-gradient(135deg, hsl(var(--neon-cyan)) 0%, hsl(var(--neon-magenta)) 100%)",
+        "gradient-hero": "linear-gradient(135deg, hsl(var(--background)) 0%, hsl(217 33% 12%) 100%)",
       },
     },
   },
