@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import webkingLogo from '@/assets/webking-logo.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,6 +20,7 @@ const Navbar = () => {
     { label: 'About', href: '#about' },
     { label: 'Services', href: '#services' },
     { label: 'Projects', href: '#projects' },
+    { label: 'Testimonials', href: '#testimonials' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -36,8 +38,9 @@ const Navbar = () => {
     }`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center">
-          <span className="text-2xl font-bold gradient-text">WebKing.AI</span>
+        <div className="flex items-center space-x-2">
+          <img src={webkingLogo} alt="WEBKING.AI" className="w-8 h-8" />
+          <span className="text-2xl font-bold gradient-text">WEBKING.AI</span>
         </div>
 
         {/* Desktop Menu */}
@@ -46,17 +49,17 @@ const Navbar = () => {
             <button
               key={item.label}
               onClick={() => scrollToSection(item.href)}
-              className="relative text-foreground hover:text-neon-cyan transition-all duration-300 group"
+              className="relative text-foreground hover:text-brand-orange transition-all duration-300 group"
             >
               {item.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-neon transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-brand transition-all duration-300 group-hover:w-full"></span>
             </button>
           ))}
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-foreground hover:text-neon-cyan transition-colors"
+          className="md:hidden text-foreground hover:text-brand-orange transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -70,7 +73,7 @@ const Navbar = () => {
             <button
               key={item.label}
               onClick={() => scrollToSection(item.href)}
-              className="block w-full text-left py-2 text-foreground hover:text-neon-cyan transition-colors"
+              className="block w-full text-left py-2 text-foreground hover:text-brand-orange transition-colors"
             >
               {item.label}
             </button>
